@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    h1 Add New Image
+    form(action="/add" method="post" enctype="multipart/form-data")
+        div.form-group
+            label(for="title") Title
+            input#title.form-control(type="text" name="title" required)
+        div.form-group
+            label(for="image") Choose Image
+            input#url.form-control(type="file" name="image" accept="image/jpeg, image/jpg, image/png" required)
+        button.btn.btn-primary(type="submit") Add Image
