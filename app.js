@@ -39,20 +39,10 @@ app.use((req, res, next) => {
   
 // Serve static files
 app.use(express.static(path.join(__dirname, 'public')));
-// Set up cache headers for images in your server response
-app.use('/gallery', express.static('public/images', {
-    maxAge: '7d', // Cache images for 7 days
-}));
-
-
 
 // set pug view template
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
-
-// app.get('/', (req, res) => {
-//     res.render('index'); // this get router is not passing any images data
-// });
 
 
 // Routes 

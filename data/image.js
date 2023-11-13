@@ -14,18 +14,22 @@ let images = [
     { id: 13, title: 'Juliana Stein', url: '/images/pexels_juliana_stein.jpg'},
     { id: 14, title: 'Alisa', url: '/images/Alisa.jpg'},
     { id: 15, title: 'Amila', url: '/images/Amila.jpg'},
-    { id: 16, title: 'Kate', url: '/images/Kate.jpg'}
-
+    { id: 16, title: 'Kate', url: '/images/Kate.jpg'},
+    { id: 17, title: 'Megan', url: '/images/Megan.jpg'},
+    { id: 18, title: 'Milisa', url: '/images/Milisa.jpg'},
+    { id: 19, title: 'Peiper', url: '/images/Peiper.jpg'},
+    { id: 20, title: 'Roseline', url: '/images/Roseline.jpg'},
 ];
 
+const getImages = () => images;
+
+const addImage = (newImage) => {
+  images.push(newImage);
+  return images;
+};
+
 module.exports = {
-    getImages: () => images,
-    addImage: (newImage) => {
-        images.push(newImage);
-        return images;
-    },
-    setImages: (newImages) => {
-        images = newImages;
-        return images;
-    },
+    getImages,
+    addImage,
+    images
 };
