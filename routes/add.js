@@ -2,7 +2,8 @@ const express = require('express');
 const router = express.Router();
 const multer = require('multer');
 const path = require('path');
-const imagesUpload = require('../data/image')
+const imagesUpload = require('../data/image');
+const isLoggedIn = require('../middlewares/isLoggedIn');
 
 // Set up multer storage configuration for single image upload
 const singleImageStorage = multer.diskStorage({
@@ -34,7 +35,7 @@ const multipleImagesUpload = multer({ storage: multipleImagesStorage }).array('i
 const images = [];
 
 // GET - Display the form to add a new image
-router.get('/', (req, res) => {
+router.get('/', isLoggedIn, (req, res) => {
   res.render('addImage');
 });
 

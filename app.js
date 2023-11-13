@@ -7,7 +7,6 @@ const registerRoutes = require('./routes/register')
 const userRoutes = require('./routes/users');
 const addRoutes = require('./routes/add')
 const path = require('path');
-const isAuthenticated = require('./middlewares/isAuthenticated');
 const errorHandler = require('./middlewares/errorHandler')
 
 const app = express();
@@ -25,7 +24,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
 
-app.get('/', isAuthenticated, (req, res) => {
+app.get('/', (req, res) => {
     res.render('layout');
 });
 
