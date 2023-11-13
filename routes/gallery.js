@@ -3,8 +3,11 @@ const router = express.Router();
 const images = require('../data/image');
 const isLoggedIn = require('../middlewares/isLoggedIn')
 
+// Apply the middleware to the routes you want to protect
+// router.use(isLoggedIn);
+
 // GET - Display the image gallery
-router.get('/', isLoggedIn, (req, res) => {
+router.get('/', (req, res) => {
   res.render('gallery', { title: 'Model', images });
 });
 

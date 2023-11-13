@@ -16,7 +16,14 @@ router.use(express.urlencoded({ extended: true }));
 
 // GET - Display the login form
 router.get('/', (req, res) => {
-  res.render('login');
+  console.log('Login route accessed.');
+  // Redirect logged-in users to the gallery page
+  if (req.session && req.session.user) {
+    console.log('Redirecting to /gallery.');
+    return res.redirect('/gallery');
+  }
+  console.log('Rendering login page.');
+  res.render('login', { error: req.query.error });
 });
 
 // POST - Handle the submission of the login form
@@ -27,7 +34,7 @@ router.post('/', async (req, res) => {
   if (user && await bcrypt.compare(password, user.password)) {
     // Set User information in session
     req.session.user = user;
-    res.redirect('/gallery');
+    return res.redirect('/gallery');
   } else {
     res.render('login', { error: 'Invalid username or password' });
   }

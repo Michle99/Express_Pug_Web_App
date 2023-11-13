@@ -22,7 +22,6 @@ router.post('/', (req, res) => {
   } else {
     // @2:57 11/11/23; 
     data.addUser({ firstName, lastName, email, username, password });
-    // For example: data.addUser({ username, password: hashedPassword });
     res.redirect('/login');
   }
 });

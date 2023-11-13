@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const galleryRoutes = require('./routes/gallery')
 const imageDetailsRoutes = require('./routes/details')
 const loginRoutes = require('./routes/login')
+const logoutRoutes = require('./routes/logout')
 const registerRoutes = require('./routes/register')
 const userRoutes = require('./routes/users');
 const addRoutes = require('./routes/add')
@@ -29,20 +30,22 @@ app.get('/', (req, res) => {
 });
 
 
-// Routes
-app.use('/login', loginRoutes);
-app.use('/gallery', galleryRoutes);
+// Routes 
+app.use('/add', addRoutes);
 app.use('/details', imageDetailsRoutes);
+app.use('/gallery', galleryRoutes);
+app.use('/login', loginRoutes);
+app.use('/logout', logoutRoutes);
 app.use('/register', registerRoutes);
 app.use('/users', userRoutes);
-app.use('/add', addRoutes);
+
 
 // errorHandler
 app.use(errorHandler);
 
-app.get('/logout', (req, res) => {
-    res.render('login');
-})
+// app.get('/logout', (req, res) => {
+//     res.render('login');
+// })
 
 app.listen(port, () => {
     console.log(`Server running on: http://localhost:${port}.`);

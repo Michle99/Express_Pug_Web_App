@@ -27,6 +27,13 @@
       "email": "rand_mal@skig.com",
       "username": "ranMalloc",
       "password": "$2b$10$RurIbzRNFcZBNUVRtSskpe82lT/jKRb4NnZYAvJSQhNTiRjPbuS82"
+    },
+    {
+      "firstName": "Jack",
+      "lastName": "The Ripper",
+      "email": "jack_the_ripper@gmail.com",
+      "username": "jackTheRipper",
+      "password": "$2b$10$3XvQumlveZwjatTkURPRCOS3k7uUgTy/9eKE3.WHLkld..rqS4.im"
     }
   ]
 }

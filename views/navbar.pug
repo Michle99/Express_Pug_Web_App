@@ -2,11 +2,11 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light
     a.navbar-brand(href="/") Model Gallery
     button.navbar-toggler(type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation")
         span.navbar-toggler-icon
-    div.collapse.navbar-collapse(id="navbarNav")
+    div.collapse.navbar-collapse#navbarNav
         ul.navbar-nav
-            li.nav-item
-                a.nav-link(href="/gallery") Gallery
-            li.nav-item
-                a.nav-link(href="/add") Add Image
-            li.nav-item
-                a.nav-link(href='/users') Photographers
+            if session && session.user
+                li.nav-item
+                    a.nav-link(href="/logout") Logout
+            else
+                li.nav-item
+                    a.nav-link(href="/login") Login
