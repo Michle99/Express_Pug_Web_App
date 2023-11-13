@@ -13,7 +13,8 @@ module.exports = {
   initializeData: () => {
     try {
       const data = fs.readFileSync(dataFilePath, 'utf8');
-      users = JSON.parse(data).users || [];
+      const existingUsers = JSON.parse(data).users || []
+      users = [...users, ...existingUsers]; // Merge existing users w/ new users
     } catch (error) {
       console.error('Error reading data file:', error.message);
     }

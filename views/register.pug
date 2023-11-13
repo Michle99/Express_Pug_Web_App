@@ -2,7 +2,7 @@ extends layout
 
 block content
     h1 Register
-    form(action="/register" method="post")
+    form(action="/register" method="post" onsubmit="return validateRegisterForm();")
         div.form-group
             label(for="firstName") First Name
             input#firstName.form-control(type="text" name="firstName" required)
@@ -20,4 +20,8 @@ block content
             input#password.form-control(type="password" name="password" required)
         button.btn.btn-primary(type="submit") Register
         if error
-            p.text-danger= error
+            p#error-message.text-danger= error
+        else
+            p#error-message.text-danger(style="display: none;")
+            
+    script(src="/javascripts/validateRegisterForm.js" type="text/javascript")

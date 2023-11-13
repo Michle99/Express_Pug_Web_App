@@ -4,7 +4,7 @@
   "description": "Express Application",
   "main": "app.js",
   "scripts": {
-    "dev": "npx pm2-dev app.js",
+    "dev": "nodemon app.js",
     "start": "npx pm2 start app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

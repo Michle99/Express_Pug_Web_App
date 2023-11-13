@@ -6,6 +6,20 @@
       "email": "kamil_lasn@gmail.com",
       "username": "k4m1l",
       "password": "password1"
+    },
+    {
+      "firstName": "Mic",
+      "lastName": "Miv",
+      "email": "karen@gmail.com",
+      "username": "karen",
+      "password": "passWord10"
+    },
+    {
+      "firstName": "Kelly",
+      "lastName": "Megan",
+      "email": "kemeg4n_10@gmail.com",
+      "username": "kem3g",
+      "password": "K3lly_Megn"
     }
   ]
 }

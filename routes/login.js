@@ -26,11 +26,9 @@ router.post('/', (req, res) => {
   if (user && user.password === password) {
     // Set User information in session
     req.session.user = user;
-    // logic to set a session or token for authentication
-    // res.json({ success: true })
     res.redirect('/gallery');
   } else {
-    res.status(400).json({ success: false, error: 'Invalid username or password' })
+    res.render('login', { error: 'Invalid username or password' });
   }
 });
 

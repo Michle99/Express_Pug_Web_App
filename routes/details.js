@@ -7,8 +7,12 @@ const images = require('../data/image');
 router.get('/:id', (req, res) => {
   const id = parseInt(req.params.id);
   const image = images.find(img => img.id === id);
-  const details = imageDetails[id];
-  res.render('details', { image, details });
+  const details = imageDetails.find(detail => detail.id === id);
+
+  if (!image || details) {
+    res.render('details', { error: 'Image Details not found!' });
+  }
+  res.render('details', { title: 'Poem', image, details });
 });
 
 module.exports = router;
