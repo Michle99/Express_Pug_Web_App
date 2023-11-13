@@ -9,7 +9,7 @@ router.get('/:id', (req, res) => {
   const image = images.find(img => img.id === id);
   const details = imageDetails.find(detail => detail.id === id);
 
-  if (!image || details) {
+  if (!image || !details) {
     res.render('details', { error: 'Image Details not found!' });
   }
   res.render('details', { title: 'Poem', image, details });

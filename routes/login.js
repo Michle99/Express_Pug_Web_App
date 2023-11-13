@@ -2,6 +2,7 @@ const express = require('express');
 const session = require('express-session');
 const router = express.Router();
 const data = require('../data/data');
+const bcrypt = require('bcrypt');
 
 // Use express-session middleware
 router.use(session({
@@ -19,11 +20,11 @@ router.get('/', (req, res) => {
 });
 
 // POST - Handle the submission of the login form
-router.post('/', (req, res) => {
+router.post('/', async (req, res) => {
   const { username, password } = req.body;
   const user = data.getUserByUsername(username);
 
-  if (user && user.password === password) {
+  if (user && await bcrypt.compare(password, user.password)) {
     // Set User information in session
     req.session.user = user;
     res.redirect('/gallery');

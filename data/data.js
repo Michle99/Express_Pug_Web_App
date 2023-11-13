@@ -1,5 +1,6 @@
 // data/data.js
 const fs = require('fs');
+const bcrypt = require('bcrypt');
 
 const dataFilePath = 'users.json'; // Add your data file path
 
@@ -31,7 +32,9 @@ module.exports = {
   },
   getUserByUsername: (username) => users.find(user => user.username === username),
   addUser: (user) => {
-    users.push(user);
+    const saltRounds = 10;
+    const hashedPassword = bcrypt.hashSync(user.password, saltRounds);
+    users.push({ ...user, password: hashedPassword });
     saveData();
   },
   isUserRegistered: isUserRegistered,
