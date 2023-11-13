@@ -17,6 +17,7 @@ const images = [
 module.exports = {
     getImages: () => images,
     addImage: (newImage) => {
-        images.push(newImage);
+        images.push({...images, ...newImage});
+        return images;
     },
 };

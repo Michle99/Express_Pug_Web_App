@@ -6,7 +6,6 @@ const images = require('../data/image.js');
 console.log("Outside router Images: ", images);
 
 router.get('/', (req, res) => {
-    console.log("Inside get router Images: ", images.length);
     res.render('index', { title: 'Model', images: images.getImages() });
 });
 

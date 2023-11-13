@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const multer = require('multer');
 const path = require('path');
-const imagesUpload = require('../data/image');
+const { getImages, addImage } = require('../data/image');
 const isLoggedIn = require('../middlewares/isLoggedIn');
 
 // Set up multer storage configuration for single image upload
@@ -34,6 +34,9 @@ const multipleImagesUpload = multer({ storage: multipleImagesStorage }).array('i
 // Mock images array for demonstration purposes
 const images = [];
 
+// Testing adding new Images. 
+// console.log("Images Upload array stuff:", addImage( { id: 14, title: 'kate Upona', url: '/images/pexels-kate-photo.jpg'}));
+
 // GET - Display the form to add a new image
 router.get('/', isLoggedIn, (req, res) => {
   res.render('addImage');
@@ -45,8 +48,8 @@ router.post('/single', singleImageUpload.single('image'), (req, res) => {
   const imageUrl = `/images/${req.file.filename}`;
 
   // Update the images array
-  imagesUpload.addImage({ id: imagesUpload.getImages().length + 1, title, url: imageUrl });
-
+  const updatedImages = addImage({ id: getImages().length + 1, title, url: imageUrl });
+  console.log("I added new images:", updatedImages);
   res.redirect('/gallery');
 });
 
@@ -57,12 +60,13 @@ router.post('/multiple', (req, res) => {
       return res.status(500).send({ error: err.message });
     }
 
-    const titles = req.body.titles;
+    // split titles into an array
+    const titles = req.body.titles.split(',').map(title => title.trim());
     const imageUrls = req.files.map(file => `/images/${file.filename}`);
 
     // Update the images array
     titles.forEach((title, index) => {
-      imagesUpload.addImage({ id: imagesUpload.getImages().length + 1, title, url: imageUrls[index] });
+      addImage({ id: getImages().length + 1, title, url: imageUrls[index] });
     });
 
     res.redirect('/gallery');
