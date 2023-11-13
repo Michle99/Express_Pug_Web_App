@@ -1,10 +1,13 @@
 // routes/index.js
 const express = require('express');
 const router = express.Router();
-const images = require('../data/image');
+const images = require('../data/image.js');
+
+console.log("Outside router Images: ", images);
 
 router.get('/', (req, res) => {
-    res.render('index', { title: 'Model', images });
+    console.log("Inside get router Images: ", images.length);
+    res.render('index', { title: 'Model', images: images });
 });
 
 module.exports = router;

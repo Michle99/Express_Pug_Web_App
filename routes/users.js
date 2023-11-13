@@ -5,7 +5,8 @@ const userData = require('../data/user');
 const isLoggedIn = require('../middlewares/isLoggedIn');
 
 router.get('/', isLoggedIn, (req, res) => {
-    res.render('users', { title: 'Photographers', users: userData });
+    const user = req.session.user;
+    res.render('users', { title: 'Photographers', users: userData, user });
 });
 
 module.exports = router;

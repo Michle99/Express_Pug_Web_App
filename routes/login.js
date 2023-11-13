@@ -1,15 +1,9 @@
 const express = require('express');
-const session = require('express-session');
+
 const router = express.Router();
 const data = require('../data/data');
 const bcrypt = require('bcrypt');
 
-// Use express-session middleware
-router.use(session({
-  secret: 'yosecret',
-  resave: false,
-  saveUninitialized: true,
-}));
 
 // Parse application/x-www-form-urlencoded data
 router.use(express.urlencoded({ extended: true }));
