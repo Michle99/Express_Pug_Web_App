@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const multer = require('multer');
 const path = require('path');
-const { getImages, addImage } = require('../data/image');
+const { getImages, addImage, setImages } = require('../data/image');
 const isLoggedIn = require('../middlewares/isLoggedIn');
 
 // Set up multer storage configuration for single image upload
@@ -44,12 +44,13 @@ router.get('/', isLoggedIn, (req, res) => {
 
 // POST - Handle the submission of the new single image form
 router.post('/single', singleImageUpload.single('image'), (req, res) => {
-  const { title } = req.body;
-  const imageUrl = `/images/${req.file.filename}`;
+  let { title } = req.body;
+  let imageUrl = `/images/${req.file.filename}`;
 
   // Update the images array
-  const updatedImages = addImage({ id: getImages().length + 1, title, url: imageUrl });
+  let updatedImages = addImage({ id: getImages().length + 1, title, url: imageUrl });
   console.log("I added new images:", updatedImages);
+  setImages(updatedImages);
   res.redirect('/gallery');
 });
 

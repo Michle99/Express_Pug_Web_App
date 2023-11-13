@@ -6,7 +6,7 @@ const images = require('../data/image');
 // GET - Display details for a specific image
 router.get('/:id', (req, res) => {
   const id = parseInt(req.params.id);
-  const image = images.find(img => img.id === id);
+  const image = images.getImages().find(img => img.id === id);
   const details = imageDetails.find(detail => detail.id === id);
 
   if (!image || !details) {
