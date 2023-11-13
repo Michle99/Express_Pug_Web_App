@@ -21,7 +21,6 @@ router.post('/', (req, res) => {
     res.render('register', { error: 'Username already taken' });
   } else {
     // @2:57 11/11/23; 
-    // TASK: make sure user is being added to the data array
     data.addUser({ firstName, lastName, email, username, password });
     // For example: data.addUser({ username, password: hashedPassword });
     res.redirect('/login');
