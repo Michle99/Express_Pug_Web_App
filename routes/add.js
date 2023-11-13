@@ -40,18 +40,18 @@ router.get('/', isLoggedIn, (req, res) => {
 });
 
 // POST - Handle the submission of the new single image form
-router.post('/', singleImageUpload.single('image'), (req, res) => {
+router.post('/single', singleImageUpload.single('image'), (req, res) => {
   const { title } = req.body;
-  const imageUrl = `/images/${req.file.filename}`; // Get the filename from multer
+  const imageUrl = `/images/${req.file.filename}`;
 
   // Update the images array
-  imagesUpload.push({ id: imagesUpload.length + 1, title, url: imageUrl });
+  imagesUpload.addImage({ id: imagesUpload.getImages().length + 1, title, url: imageUrl });
 
   res.redirect('/gallery');
 });
 
 // POST - Handle the submission of the new multiple images form
-router.post('/', (req, res) => {
+router.post('/multiple', (req, res) => {
   multipleImagesUpload(req, res, (err) => {
     if (err) {
       return res.status(500).send({ error: err.message });
@@ -62,7 +62,7 @@ router.post('/', (req, res) => {
 
     // Update the images array
     titles.forEach((title, index) => {
-      imagesUpload.push({ id: imagesUpload.length + 1, title, url: imageUrls[index] });
+      imagesUpload.addImage({ id: imagesUpload.getImages().length + 1, title, url: imageUrls[index] });
     });
 
     res.redirect('/gallery');

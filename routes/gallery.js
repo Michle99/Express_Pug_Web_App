@@ -10,7 +10,7 @@ const isLoggedIn = require('../middlewares/isLoggedIn')
 router.get('/', (req, res) => {
   const user = req.session.user;
 
-  res.render('gallery', { title: 'Model', images, user });
+  res.render('gallery', { title: 'Model', images: images.getImages(), user });
 });
 
 module.exports = router;

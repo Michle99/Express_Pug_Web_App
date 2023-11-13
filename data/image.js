@@ -14,4 +14,9 @@ const images = [
     { id: 13, title: 'Juliana Stein', url: '/images/pexels_juliana_stein.jpg'}
 ];
 
-module.exports = images;
+module.exports = {
+    getImages: () => images,
+    addImage: (newImage) => {
+        images.push(newImage);
+    },
+};

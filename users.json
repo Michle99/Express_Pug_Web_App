@@ -34,6 +34,13 @@
       "email": "jack_the_ripper@gmail.com",
       "username": "jackTheRipper",
       "password": "$2b$10$3XvQumlveZwjatTkURPRCOS3k7uUgTy/9eKE3.WHLkld..rqS4.im"
+    },
+    {
+      "firstName": "Mandy",
+      "lastName": "Mason",
+      "email": "madd_man@gmail.com",
+      "username": "madMason",
+      "password": "$2b$10$g0/B2wCJg8odV6s38LjX3OhAWL1F8sFN50EjFVAvs5WTMSPMHIW0G"
     }
   ]
 }

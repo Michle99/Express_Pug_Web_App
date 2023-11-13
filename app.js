@@ -58,6 +58,8 @@ app.set('views', path.join(__dirname, 'views'));
 // Routes 
 app.use('/', indexRoutes);
 app.use('/add', addRoutes);
+app.use('/add/single', addRoutes);
+app.use('/add/multiple', addRoutes);
 app.use('/details', imageDetailsRoutes);
 app.use('/gallery', galleryRoutes);
 app.use('/login', loginRoutes);
