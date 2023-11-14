@@ -21,15 +21,39 @@ let images = [
     { id: 20, title: 'Roseline', url: '/images/Roseline.jpg'},
 ];
 
-const getImages = () => images;
+
+// data/data.js
+const fs = require('fs');
+const bcrypt = require('bcrypt');
+
+const dataFilePath = 'images.json'; 
+
+let imageData = [];
+
+function saveData() {
+  fs.writeFileSync(dataFilePath, JSON.stringify({ imageData }, null, 2), 'utf-8');
+}
+
+let initializeData = () => {
+  try {
+    const data = fs.readFileSync(dataFilePath, 'utf8');
+    const existingImageData = JSON.parse(data).imageData || []
+    imageData = [...imageData, ...existingImageData]; // Merge existing users w/ new users
+  } catch (error) {
+    console.error('Error reading data file:', error.message);
+  }
+}
+
+const getImages = () => imageData;
 
 const addImage = (newImage) => {
-  images.push(newImage);
-  return images;
+  images.push({ ...newImage });
+ saveData();
 };
 
 module.exports = {
     getImages,
     addImage,
-    images
+    images,
+    initializeData
 };

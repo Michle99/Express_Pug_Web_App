@@ -7,6 +7,6 @@ block content
       if images && images.length
         each image in images
           .col-md-4.mb-4
-            img.img-thumbnail(src=image.url, alt=image.title)
+            img.img-thumbnail(src=`${image.url.replace('./public', '')}`, alt=image.title)
       else
         p.text-center.text-white No images available

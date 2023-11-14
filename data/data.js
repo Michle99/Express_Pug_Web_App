@@ -2,7 +2,7 @@
 const fs = require('fs');
 const bcrypt = require('bcrypt');
 
-const dataFilePath = 'users.json'; // Add your data file path
+const dataFilePath = 'users.json'; 
 
 let users = [];
 
