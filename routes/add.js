@@ -29,12 +29,14 @@ const singleImageUpload = multer({ storage: singleImageStorage });
 
 const multipleImagesUpload = multer({ storage: multipleImagesStorage }).array('images', 5); // Limit to 5 images
 
+// Initialize data on startup
+initializeData();
 
 // Testing adding new Images. 
 // console.log("Images Upload array stuff:", addImage( { id: 14, title: 'kate Upona', url: '/images/pexels-kate-photo.jpg'}));
 
 // GET - Display the form to add a new image
-router.get('/', isLoggedIn, (req, res) => {
+router.get('/', (req, res) => {
   res.render('addImage');
 });
 

@@ -1,14 +1,69 @@
 {
-    "images": [
-        { "id": 1, "title": "Godisable Jacob", "url": "./public/images/pexels-godisable-jacob.jpg" },
-    { "id": 2, "title": "Hiago Italo", "url": "./public/images/pexels-hiago-italo.jpg" },
-    { "id": 3, "title": "Hia Nguyen", "url": "./public/images/pexels-hải-nguyễn.jpg" },
-    { "id": 4, "title": "JC Laurio", "url": "./public/images/pexels-jc-laurio.jpg" },
-    { "id": 5, "title": "Jennifer Enujiugha", "url": "./public/images/pexels-jennifer-enujiugha-1.jpg" },
-    { "id": 6, "title": "Jermainer Ulinwa", "url": "./public/images/pexels-jermaine-ulinwa.jpg" },
-    { "id": 7, "title": "Arsham Haghani", "url": "./public/images/pexels-arsham-haghani.jpg" },
-    { "id": 8, "title": "Aryane Vilarim", "url": "./public/images/pexels-aryane-vilarim.jpg" },
-    { "id": 9, "title": "Engin Akyurt", "url": "./public/images/pexels-engin-akyurt.jpg" },
-    { "id": 10, "title": "Maria Orlova", "url": "./public/images/pexels-maria-orlova.jpg" }
-    ]
+  "imageData": [
+    {
+      "id": 1,
+      "title": "Godisable Jacob",
+      "url": "./public/images/pexels-godisable-jacob.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Hiago Italo",
+      "url": "./public/images/pexels-hiago-italo.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Hia Nguyen",
+      "url": "./public/images/pexels-hải-nguyễn.jpg"
+    },
+    {
+      "id": 4,
+      "title": "JC Laurio",
+      "url": "./public/images/pexels-jc-laurio.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Jennifer Enujiugha",
+      "url": "./public/images/pexels-jennifer-enujiugha-1.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Jermainer Ulinwa",
+      "url": "./public/images/pexels-jermaine-ulinwa.jpg"
+    },
+    {
+      "id": 7,
+      "title": "Arsham Haghani",
+      "url": "./public/images/pexels-arsham-haghani.jpg"
+    },
+    {
+      "id": 8,
+      "title": "Aryane Vilarim",
+      "url": "./public/images/pexels-aryane-vilarim.jpg"
+    },
+    {
+      "id": 9,
+      "title": "Engin Akyurt",
+      "url": "./public/images/pexels-engin-akyurt.jpg"
+    },
+    {
+      "id": 10,
+      "title": "Maria Orlova",
+      "url": "./public/images/pexels-maria-orlova.jpg"
+    },
+    {
+      "id": 11,
+      "title": "Kellyen",
+      "url": "/images/Kellyen.jpg"
+    },
+    {
+      "id": 12,
+      "title": "Collins",
+      "url": "/images/Collins.jpg"
+    },
+    {
+      "id": 13,
+      "title": "Francisco Rivera",
+      "url": "/images/Francisco Rivera.jpg"
+    }
+  ]
 }

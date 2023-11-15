@@ -6,7 +6,6 @@ const data = require('../data/data');
 // Initialize data on startup
 data.initializeData();
 
-
 // GET - Display the registration form
 router.get('/', (req, res) => {
   res.render('register');
