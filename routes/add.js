@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const multer = require('multer');
 const path = require('path');
-const { getImages, addImage, getImagesData } = require('../data/image');
+const { initializeData, addImage, getImagesData } = require('../data/image');
 const isLoggedIn = require('../middlewares/isLoggedIn');
 
 // Set up multer storage configuration for single image upload
