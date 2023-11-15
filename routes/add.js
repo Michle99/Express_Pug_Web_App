@@ -32,8 +32,6 @@ const multipleImagesUpload = multer({ storage: multipleImagesStorage }).array('i
 // Initialize data on startup
 initializeData();
 
-// Testing adding new Images. 
-// console.log("Images Upload array stuff:", addImage( { id: 14, title: 'kate Upona', url: '/images/pexels-kate-photo.jpg'}));
 
 // GET - Display the form to add a new image
 router.get('/', (req, res) => {
