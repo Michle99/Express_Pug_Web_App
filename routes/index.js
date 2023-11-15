@@ -1,7 +1,6 @@
 // routes/index.js
 const express = require('express');
 const router = express.Router();
-// const images = require('../data/image.js');
 const images = require('../images.json')
 
 console.log("Outside router Images: ", images);

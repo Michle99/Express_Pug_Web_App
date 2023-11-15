@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-// const images = require('../data/image');
 const images = require('../images.json');
 const isLoggedIn = require('../middlewares/isLoggedIn')
 
