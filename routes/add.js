@@ -5,6 +5,9 @@ const path = require('path');
 const { initializeData, addImage, getImagesData } = require('../data/image');
 const isLoggedIn = require('../middlewares/isLoggedIn');
 
+// Initialize data on startup
+initializeData();
+
 // Set up multer storage configuration for single image upload
 const singleImageStorage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -28,9 +31,6 @@ const multipleImagesStorage = multer.diskStorage({
 const singleImageUpload = multer({ storage: singleImageStorage });
 
 const multipleImagesUpload = multer({ storage: multipleImagesStorage }).array('images', 5); // Limit to 5 images
-
-// Initialize data on startup
-initializeData();
 
 
 // GET - Display the form to add a new image
