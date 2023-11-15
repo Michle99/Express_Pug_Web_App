@@ -1,6 +1,6 @@
-const express = require('express');
+import express from 'express';
 const router = express.Router();
-const data = require('../data/data');
+import * as data from '../data/data.js';
 
 
 // Initialize data on startup
@@ -25,4 +25,4 @@ router.post('/', (req, res) => {
   }
 });
 
-module.exports = router;
+export default router;

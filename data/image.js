@@ -23,7 +23,7 @@ let images = [
 
 
 // data/images.js
-const fs = require('fs');
+import fs from 'fs';
 
 const dataFilePath = 'images.json'; 
 
@@ -37,21 +37,21 @@ function saveData() {
 
 const getImages = () => images;
 
-module.exports = {
-    getImages,
-    addImage: (newImage) => {
-      imageData.push({...newImage});
-      saveData();
-    },
-    getImagesData: () => imageData,
-    initializeData: () => {
-      try {
-        const data = fs.readFileSync(dataFilePath, 'utf8');
-        const existingImageData = JSON.parse(data).imageData || []
-        imageData = [...imageData, ...existingImageData];
-      } catch (error) {
-        console.error('Error reading data file:', error.message);
-      }
-    },
-    images,
+const addImage = (newImage) => {
+  imageData.push({...newImage});
+  saveData();
 };
+
+const getImagesData = () => imageData;
+
+const initializeData = () => {
+  try {
+    const data = fs.readFileSync(dataFilePath, 'utf8');
+    const existingImageData = JSON.parse(data).imageData || []
+    imageData = [...imageData, ...existingImageData];
+  } catch (error) {
+    console.error('Error reading data file:', error.message);
+  }
+}
+
+export { getImages, addImage, getImagesData, initializeData };

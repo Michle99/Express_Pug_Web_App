@@ -1,9 +1,9 @@
-const express = require('express');
+import express from 'express';
 const router = express.Router();
-const multer = require('multer');
-const path = require('path');
-const { initializeData, addImage, getImagesData } = require('../data/image');
-const isLoggedIn = require('../middlewares/isLoggedIn');
+import multer from 'multer' ;
+import path from 'path'
+import { initializeData, addImage, getImagesData } from '../data/image.js';
+import isLoggedIn from '../middlewares/isLoggedIn.js';
 
 // Initialize data on startup
 initializeData();
@@ -66,4 +66,4 @@ router.post('/multiple', (req, res) => {
   });
 });
 
-module.exports = router;
+export default router;

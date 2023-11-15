@@ -14,4 +14,4 @@ const userData = [
     { id: 12,  name: 'Kelly Braggs', username: 'braggs.K100', email: 'kelly_100@gmail.com' },
 ];
 
-module.exports = userData;
+export default userData;

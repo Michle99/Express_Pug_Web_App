@@ -41,4 +41,4 @@ const imageDetails = [
     { id: 39, description: 'White mountains wear their snowy cap, A winter\'s tale, a tranquil nap. Silent sentinels in icy repose, Nature\'s elegance in the cold\'s impose.' },
 ];
 
-module.exports = imageDetails;
+export default imageDetails;

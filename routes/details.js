@@ -1,7 +1,9 @@
-const express = require('express');
+import express from 'express';
 const router = express.Router();
-const imageDetails = require('../data/imageDetails');
-const images = require('../images.json');
+import imageDetails  from '../data/imageDetails.js';
+import fs from 'fs';
+
+const images = JSON.parse(fs.readFileSync('images.json', 'utf-8'));
 
 // GET - Display details for a specific image
 router.get('/:id', (req, res) => {
@@ -15,4 +17,4 @@ router.get('/:id', (req, res) => {
   res.render('details', { title: 'Poem', image, details });
 });
 
-module.exports = router;
+export default router;

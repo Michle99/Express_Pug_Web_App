@@ -1,7 +1,7 @@
-const express = require('express');
+import express from 'express';
 const router = express.Router();
-const data = require('../data/data');
-const bcrypt = require('bcrypt');
+import * as data from '../data/data.js';
+import bcrypt from 'bcrypt';
 
 
 // Parse application/x-www-form-urlencoded data
@@ -33,4 +33,4 @@ router.post('/', async (req, res) => {
   }
 });
 
-module.exports = router;
+export default router;

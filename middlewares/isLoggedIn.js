@@ -7,4 +7,4 @@ const isLoggedIn = (req, res, next) => {
     }
 };
 
-module.exports = isLoggedIn;
+export default isLoggedIn;

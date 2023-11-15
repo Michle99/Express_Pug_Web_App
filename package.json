@@ -1,6 +1,7 @@
 {
   "name": "sba_318",
   "version": "1.0.0",
+  "type": "module",
   "description": "Express Application",
   "main": "app.js",
   "scripts": {

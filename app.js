@@ -1,22 +1,28 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const galleryRoutes = require('./routes/gallery')
-const imageDetailsRoutes = require('./routes/details')
-const indexRoutes = require('./routes/index')
-const loginRoutes = require('./routes/login')
-const logoutRoutes = require('./routes/logout')
-const registerRoutes = require('./routes/register')
-const userRoutes = require('./routes/users');
-const addRoutes = require('./routes/add')
-const path = require('path');
-const errorHandler = require('./middlewares/errorHandler')
-const session = require('express-session');
-const cookieParser = require('cookie-parser');
+import express from 'express';
+import bodyParser from 'body-parser'
+import galleryRoutes  from './routes/gallery.js';
+import imageDetailsRoutes from './routes/details.js';
+import indexRoutes from './routes/index.js'
+import loginRoutes from './routes/login.js'
+import logoutRoutes from './routes/logout.js'
+import registerRoutes from './routes/register.js'
+import userRoutes from './routes/users.js';
+import addRoutes from './routes/add.js';
+import path from 'path';
+import errorHandler from './middlewares/errorHandler.js';
+import session from 'express-session';
+import cookieParser from 'cookie-parser';
 
 // define express app
 const app = express();
-
 const port = process.env.PORT || 3000;
+
+// Serve static files
+app.use(express.static('public'));
+
+// set pug view template
+app.set('view engine', 'pug');
+app.set('views', 'views');
 
 // middleware
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -37,12 +43,6 @@ app.use((req, res, next) => {
     next();
 });
   
-// Serve static files
-app.use(express.static(path.join(__dirname, 'public')));
-
-// set pug view template
-app.set('view engine', 'pug');
-app.set('views', path.join(__dirname, 'views'));
 
 
 // Routes 

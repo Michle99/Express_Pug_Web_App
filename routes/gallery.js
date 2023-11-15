@@ -1,10 +1,12 @@
-const express = require('express');
+import express from 'express';
 const router = express.Router();
-const images = require('../images.json');
-const isLoggedIn = require('../middlewares/isLoggedIn')
+import isLoggedIn from '../middlewares/isLoggedIn.js';
 
+import fs from 'fs';
+
+const images = JSON.parse(fs.readFileSync('images.json', 'utf-8'));
 // Apply the middleware to the routes you want to protect
-// router.use(isLoggedIn);
+router.use(isLoggedIn);
 
 // GET - Display the image gallery
 router.get('/', (req, res) => {
@@ -13,4 +15,4 @@ router.get('/', (req, res) => {
   res.render('gallery', { title: 'Model', images: images.imageData, user });
 });
 
-module.exports = router;
+export default router;
