@@ -9,16 +9,6 @@ let users = [];
 function saveData() {
   fs.writeFileSync(dataFilePath, JSON.stringify({ users }, null, 2), 'utf-8');
 }
-// check if user is registered
-function isUserRegistered(username) { // register form
-  return users.includes(user => user.username === username);
-}
-
-// check if registered user entered the correct password
-function isCorrectPassword(username, password) { // login form
-  const user = users.find(user => user.username === username);
-  return user && user.password === password;
-}
 
 module.exports = {
   initializeData: () => {
@@ -37,6 +27,4 @@ module.exports = {
     users.push({ ...user, password: hashedPassword });
     saveData();
   },
-  isUserRegistered: isUserRegistered,
-  isCorrectPassword: isCorrectPassword
 };
