@@ -1,4 +1,15 @@
-# Model Gallery & Poems App 
+<style>
+    .header1 {
+        color: 'brown';
+        font-family: 'Lato';
+    }
+    
+
+    
+</style>
+<div>
+    <h1 class="header1">Model Gallery & Poems App<h1>
+</div>
 
 ## Table Of Contents
 1. [Description](#description)
@@ -6,13 +17,13 @@
 3. [Screenshots](#screenshots)
 
 
-### Description
+<a id="description"><h3>Description</h3></a>
 Model Gallery & Poem web application displays beautiful model images from [pexel](https://www.pexels.com) and interesting nature poems. This project was a further feature extension from the [sba_318_express_app](https://github.com/Michle99/sba_318_express_app) project.
 
 The same pre-requisites from [sba_318_express_app](https://github.com/Michle99/sba_318_express_app) applies to this project. 
 
 
-### Added Features:
+<a id="description"><h3>Added Features:</h3></a>
 The following are the additional Routes, views, middlewares:
 
 **Routes:**
@@ -36,6 +47,27 @@ app.use('/users', userRoutes);
  |-- isLoggedIn.js
 ```
 
-### Screenshots
+<a id="description"><h3>Screenshots</h3></a>
 
+- **Home Page:**
+<img src="./scrnsht/home_0.png" width="90%" alt="Home page 1">
+<img src="./scrnsht/home_1.png" width="90%" alt="Home page 1">
+
+- **Register Page:**
+<img src="./scrnsht/register.png" width="90%" alt="Register page">
+
+- **Login:**
+<img src="./scrnsht/login.png" width="90%" alt="Login page">
+
+- **Add Image Page:**
+<img src="./scrnsht/add_new_image.png" width="90%" alt="Add new Image page">
+
+- **Gallery Page:**
+<img src="./scrnsht/gallery.png" width="90%" alt="Gallery page">
+
+- **Details Page:**
+<img src="./scrnsht/details.png" width="90%" alt="Details page">
+
+- **Photographers Page:**
+<img src="./scrnsht/user_photo.png" width="90%" alt="Photographers page">
 

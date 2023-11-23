@@ -41,6 +41,13 @@
       "email": "madd_man@gmail.com",
       "username": "madMason",
       "password": "$2b$10$g0/B2wCJg8odV6s38LjX3OhAWL1F8sFN50EjFVAvs5WTMSPMHIW0G"
+    },
+    {
+      "firstName": "Lane",
+      "lastName": "Kaje",
+      "email": "lan_kaj@gmail.com",
+      "username": "kalj",
+      "password": "$2b$10$DrOkCisGH1p6qKHhM93R4OcCpE.Ud/z05Vu6aQKD5jNcvw/fZfneq"
     }
   ]
 }

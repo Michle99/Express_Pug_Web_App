@@ -79,6 +79,31 @@
       "id": 16,
       "title": "Solese",
       "url": "/images/Solese.jpg"
+    },
+    {
+      "id": 17,
+      "title": "Charlie",
+      "url": "/images/Charlie.jpg"
+    },
+    {
+      "id": 18,
+      "title": "Runa",
+      "url": "/images/undefined_pexels_ezekixl_oluwatobi_akinnewu.jpg"
+    },
+    {
+      "id": 19,
+      "title": "Illsa",
+      "url": "/images/undefined_pexels_brandan_saviour.jpg"
+    },
+    {
+      "id": 20,
+      "title": "Willie",
+      "url": "/images/Willie.jpg"
+    },
+    {
+      "id": 21,
+      "title": "Celeste",
+      "url": "/images/Celeste.jpg"
     }
   ]
 }
