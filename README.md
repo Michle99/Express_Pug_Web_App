@@ -1,12 +1,3 @@
-<style>
-    .header1 {
-        color: 'brown';
-        font-family: 'Lato';
-    }
-    
-
-    
-</style>
 <div>
     <h1 class="header1">Model Gallery & Poems App<h1>
 </div>
