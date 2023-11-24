@@ -6,7 +6,7 @@ import path from 'path'
 
 const images = JSON.parse(fs.readFileSync('images.json', 'utf-8'));
 
-console.log("Outside router Images: ", images);
+// console.log("Outside router Images: ", images);
 
 router.get('/', (req, res) => {
     res.render('index', { title: 'Model', images: images.imageData });

@@ -2,11 +2,11 @@ extends layout
 
 block content
   div.container
-    h1.text-center(style='color: white;') #{title}
+    h1.text-center #{title}
     ul.list-group
       each user in users
         li.list-group-item.bg-light
-          div.card.bg-light
+          div.card.bg-dark
             div.card-body
-              h5.card-title #{user.name}
-              p.card-text Username: #{user.username}
+              h5.card-title.text-white #{user.name}
+              p.card-text.text-white Username: #{user.username}
