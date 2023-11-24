@@ -63,3 +63,9 @@ app.use('/users', userRoutes);
 <img src="./scrnsht/users_0.png" width="90%" alt="Photographers page">
 <img src="./scrnsht/users_1.png" width="90%" alt="Photographers page">
 
+## Getting Started
+Download or clone the repository, install the dependencies using:
+
+```
+npm install
+```
