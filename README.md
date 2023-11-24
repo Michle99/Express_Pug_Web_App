@@ -60,5 +60,5 @@ app.use('/users', userRoutes);
 <img src="./scrnsht/details.png" width="90%" alt="Details page">
 
 - **Photographers Page:**
-<img src="./scrnsht/user_photo.png" width="90%" alt="Photographers page">
+<img src="./scrnsht/users_0.png" width="90%" alt="Photographers page">
 
